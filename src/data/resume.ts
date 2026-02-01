@@ -8,7 +8,8 @@ export const resume = {
         location: "Maltepe, Istanbul",
         email: "ahmetzdevran@gmail.com",
         linkedin: "https://linkedin.com/in/adevran",
-        github: "https://github.com/plazc" // Assumed from context or added as placeholder
+        github: "https://github.com/plazc",
+        avatarUrl: "/me.jpg"
     },
     about: "Self-host enjoyer, optimization addict. Oriented to software integration and Linux, improving team skills for all-out works. Learning Devops fundamentals and prepares himself for this area.",
     expertise: [

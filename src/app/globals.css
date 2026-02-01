@@ -1,35 +1,68 @@
 @import "tailwindcss";
 
 :root {
-  --background: #fff7ed;
-  /* Orange-50 */
-  --foreground: #1c1917;
-  /* Stone-900 */
+  /* Vibrant Light Mode Base */
+  --background: #ffffff;
+  --foreground: #0f172a;
+  /* Slate 900 */
+
+  /* Primary Accent - Orange/Sunset */
   --accent: #f97316;
-  /* Orange-500 */
-  --accent-gradient: linear-gradient(135deg, #f97316 0%, #ea580c 100%);
+  /* Orange 500 */
+  --accent-secondary: #ec4899;
+  /* Pink 500 */
+  --accent-tertiary: #8b5cf6;
+  /* Violet 500 */
+
+  /* Smooth Sunset Gradient */
+  --accent-gradient: linear-gradient(135deg, #f97316 0%, #ec4899 50%, #8b5cf6 100%);
+
+  /* Glassmorphism */
+  --glass-bg: rgba(255, 255, 255, 0.7);
+  --glass-border: rgba(255, 255, 255, 0.5);
+  --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
   --color-accent: var(--accent);
+  --color-accent-secondary: var(--accent-secondary);
+  --color-accent-tertiary: var(--accent-tertiary);
   --image-accent-gradient: var(--accent-gradient);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
+
+  --color-glass-bg: var(--glass-bg);
+  --color-glass-border: var(--glass-border);
 }
 
-/* Remove dark mode preference entirely */
-
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: var(--font-sans), Arial, Helvetica, sans-serif;
   @apply antialiased overflow-x-hidden;
+
+  /* Smooth Orange/Warm Mesh Gradient */
   background-image:
-    radial-gradient(at 0% 0%, rgba(249, 115, 22, 0.15) 0px, transparent 50%),
-    radial-gradient(at 100% 0%, rgba(234, 88, 12, 0.10) 0px, transparent 50%),
-    radial-gradient(at 100% 100%, rgba(249, 115, 22, 0.05) 0px, transparent 50%);
+    radial-gradient(at 0% 0%, hsla(253, 16%, 7%, 1) 0, transparent 50%),
+    radial-gradient(at 50% 0%, hsla(225, 39%, 30%, 1) 0, transparent 50%),
+    radial-gradient(at 100% 0%, hsla(339, 49%, 30%, 1) 0, transparent 50%);
+
+  background-image:
+    radial-gradient(at 40% 20%, rgba(249, 115, 22, 0.15) 0px, transparent 50%),
+    /* Orange */
+    radial-gradient(at 80% 0%, rgba(236, 72, 153, 0.15) 0px, transparent 50%),
+    /* Pink */
+    radial-gradient(at 0% 50%, rgba(251, 146, 60, 0.15) 0px, transparent 50%),
+    /* Light Orange */
+    radial-gradient(at 80% 50%, rgba(139, 92, 246, 0.1) 0px, transparent 50%),
+    /* Violet */
+    radial-gradient(at 0% 100%, rgba(244, 63, 94, 0.1) 0px, transparent 50%),
+    /* Rose */
+    radial-gradient(at 80% 100%, rgba(249, 115, 22, 0.15) 0px, transparent 50%);
+  /* Orange */
+
   background-attachment: fixed;
 }
 
@@ -44,5 +77,5 @@ h6 {
 }
 
 ::selection {
-  @apply bg-orange-200 text-orange-900;
+  @apply bg-indigo-100 text-indigo-900;
 }
