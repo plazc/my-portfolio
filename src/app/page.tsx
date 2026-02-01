@@ -1,12 +1,10 @@
 "use client";
 
-import { resume } from "@/data/resume";
-import { motion } from "framer-motion";
+import { motion, Variants } from "framer-motion";
 import Image from "next/image";
-import Link from "next/link";
-import { clsx } from "clsx";
+import { useLanguage } from "@/context/LanguageContext";
 
-const container = {
+const container: Variants = {
   hidden: { opacity: 0 },
   show: {
     opacity: 1,
@@ -17,7 +15,7 @@ const container = {
   }
 };
 
-const item = {
+const item: Variants = {
   hidden: { opacity: 0, y: 30 },
   show: {
     opacity: 1,
@@ -26,7 +24,7 @@ const item = {
   }
 };
 
-const float = {
+const float: Variants = {
   animate: {
     y: [0, -10, 0],
     transition: {
@@ -38,6 +36,8 @@ const float = {
 };
 
 export default function Home() {
+  const { content } = useLanguage();
+
   return (
     <motion.div
       variants={container}
@@ -55,8 +55,8 @@ export default function Home() {
             className="relative w-48 h-48 sm:w-64 sm:h-64 mb-6 rounded-full overflow-hidden border-4 border-white/80 shadow-2xl"
           >
             <Image
-              src={resume.contact.avatarUrl || "/me.jpg"}
-              alt={resume.name}
+              src={content.contact.avatarUrl || "/me.jpg"}
+              alt={content.name}
               fill
               className="object-cover"
               priority
@@ -65,27 +65,27 @@ export default function Home() {
 
           <motion.div animate="animate" variants={float}>
             <h1 className="text-4xl sm:text-6xl font-black tracking-tighter text-transparent bg-clip-text bg-[image:var(--accent-gradient)] drop-shadow-sm pb-2">
-              {resume.name}
+              {content.name}
             </h1>
           </motion.div>
           <h2 className="text-3xl sm:text-4xl font-medium text-slate-700">
-            {resume.title}
+            {content.title}
           </h2>
         </div>
 
         <div className="flex flex-wrap gap-x-6 gap-y-3 text-slate-600 font-medium text-base sm:text-lg">
           <span className="flex items-center gap-2 px-3 py-1 bg-white/40 rounded-full border border-white/50 backdrop-blur-sm">
             <span className="w-2.5 h-2.5 rounded-full bg-orange-500 animate-pulse"></span>
-            {resume.contact.location}
+            {content.contact.location}
           </span>
-          <a href={`mailto:${resume.contact.email}`} className="flex items-center gap-2 px-3 py-1 bg-white/40 rounded-full border border-white/50 backdrop-blur-sm hover:bg-white/60 hover:text-orange-600 transition-all cursor-pointer">
+          <a href={`mailto:${content.contact.email}`} className="flex items-center gap-2 px-3 py-1 bg-white/40 rounded-full border border-white/50 backdrop-blur-sm hover:bg-white/60 hover:text-orange-600 transition-all cursor-pointer">
             <span className="w-2.5 h-2.5 rounded-full bg-rose-500"></span>
-            {resume.contact.email}
+            {content.contact.email}
           </a>
         </div>
 
         <p className="text-xl sm:text-2xl leading-relaxed text-slate-700 max-w-3xl font-light">
-          {resume.about}
+          {content.about}
         </p>
       </motion.section>
 
@@ -94,10 +94,10 @@ export default function Home() {
         <div className="space-y-8">
           <h3 className="text-2xl font-bold tracking-tight flex items-center gap-3 text-slate-800">
             <div className="h-1 w-8 bg-orange-500 rounded-full"></div>
-            <span>Expertise</span>
+            <span>{content.ui.expertise}</span>
           </h3>
           <div className="flex flex-wrap gap-3">
-            {resume.expertise.map((skill, idx) => (
+            {content.expertise.map((skill, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{ scale: 1.05, y: -2 }}
@@ -114,10 +114,10 @@ export default function Home() {
         <div className="space-y-8">
           <h3 className="text-2xl font-bold tracking-tight flex items-center gap-3 text-slate-800">
             <div className="h-1 w-8 bg-rose-500 rounded-full"></div>
-            <span>Tech Stack</span>
+            <span>{content.ui.techStack}</span>
           </h3>
           <div className="grid grid-cols-4 sm:grid-cols-5 gap-4 sm:gap-6">
-            {resume.techStack?.map((tech, idx) => (
+            {content.techStack?.map((tech, idx) => (
               <motion.div
                 key={idx}
                 whileHover={{ y: -5 }}
@@ -137,13 +137,13 @@ export default function Home() {
       <motion.section variants={item} id="experience" className="space-y-10">
         <div className="flex items-center gap-4">
           <h3 className="text-3xl font-black tracking-tighter text-slate-900">
-            Experience
+            {content.ui.experience}
           </h3>
           <div className="h-px bg-gradient-to-r from-slate-200 to-transparent flex-1"></div>
         </div>
 
         <div className="grid grid-cols-1 gap-8">
-          {resume.experience.map((job, idx) => (
+          {content.experience.map((job, idx) => (
             <motion.div
               key={idx}
               whileHover={{ y: -4 }}
@@ -188,19 +188,19 @@ export default function Home() {
           <div className="w-12 h-12 bg-orange-100 rounded-2xl flex items-center justify-center mb-6 text-2xl text-orange-600">
             🎓
           </div>
-          <h3 className="text-2xl font-bold text-slate-900 mb-2">Education</h3>
+          <h3 className="text-2xl font-bold text-slate-900 mb-2">{content.ui.education}</h3>
 
           <div className="space-y-4">
             <div>
-              <h4 className="text-lg font-bold text-orange-600">{resume.education.degree}</h4>
-              <p className="text-slate-700 font-semibold text-lg">{resume.education.school}</p>
-              <p className="text-slate-500 text-sm mt-1">{resume.education.period}</p>
+              <h4 className="text-lg font-bold text-orange-600">{content.education.degree}</h4>
+              <p className="text-slate-700 font-semibold text-lg">{content.education.school}</p>
+              <p className="text-slate-500 text-sm mt-1">{content.education.period}</p>
             </div>
 
             <div className="h-px bg-slate-100 w-full my-4"></div>
 
             <ul className="space-y-2">
-              {resume.education.details.map((detail, idx) => (
+              {content.education.details.map((detail, idx) => (
                 <li key={idx} className="text-slate-600 text-sm flex items-center gap-2">
                   <div className="w-1 h-1 rounded-full bg-slate-300"></div>
                   {detail}
@@ -222,9 +222,9 @@ export default function Home() {
           <div className="w-12 h-12 bg-white/20 backdrop-blur-md rounded-2xl flex items-center justify-center mb-6 text-2xl">
             🏆
           </div>
-          <h3 className="text-2xl font-bold text-white mb-6">Key Achievements</h3>
+          <h3 className="text-2xl font-bold text-white mb-6">{content.ui.keyAchievements}</h3>
           <ul className="space-y-5 relative z-10">
-            {resume.keyAchievements.map((item, idx) => (
+            {content.keyAchievements.map((item, idx) => (
               <li key={idx} className="flex gap-4 items-start">
                 <div className="w-6 h-6 rounded-full bg-white/20 flex items-center justify-center shrink-0 font-bold text-xs mt-0.5 border border-white/30">
                   {idx + 1}
@@ -239,7 +239,7 @@ export default function Home() {
       {/* Footer */}
       <motion.footer variants={item} className="pt-10 text-center">
         <div className="inline-block px-4 py-2 rounded-full bg-white/30 backdrop-blur-md border border-white/40 text-slate-500 text-sm font-medium">
-          © {new Date().getFullYear()} {resume.name} • Built with Next.js & Tailwind
+          © {new Date().getFullYear()} {content.name} • {content.ui.footer}
         </div>
       </motion.footer>
     </motion.div>
