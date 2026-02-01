@@ -8,7 +8,7 @@ export const resume = {
         location: "Maltepe, Istanbul",
         email: "ahmetzdevran@gmail.com",
         linkedin: "https://linkedin.com/in/adevran",
-        github: "https://github.com/plazc",
+        github: "https://github.com/azdevran",
         avatarUrl: "/me.jpg"
     },
     about: "Self-host enjoyer, optimization addict. Oriented to software integration and Linux, improving team skills for all-out works. Learning Devops fundamentals and prepares himself for this area.",
@@ -58,7 +58,7 @@ export const resume = {
             period: "Feb 2021 - May 2023",
             description: [
                 "Joined project-based teams in university. Such as UAV Drone Design Comp. and Hyperloop Design Comp.",
-                "Saw hard part of the team working and learned how to set up the psycology and mental health for healthy procession."
+                "Saw hard part of the team working and learned how to set up the psychology and mental health for healthy procession."
             ]
         }
     ],
