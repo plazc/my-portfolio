@@ -64,6 +64,7 @@ export default function MobileNav() {
                             <li><Link href="/#about" onClick={() => setIsOpen(false)} className="block py-3 px-4 rounded-xl text-slate-700 hover:bg-white hover:text-indigo-600 shadow-sm border border-transparent hover:border-white/50 transition-all">{content.nav.about}</Link></li>
                             <li><Link href="/#experience" onClick={() => setIsOpen(false)} className="block py-3 px-4 rounded-xl text-slate-700 hover:bg-white hover:text-indigo-600 shadow-sm border border-transparent hover:border-white/50 transition-all">{content.nav.experience}</Link></li>
                             <li><Link href="/#education" onClick={() => setIsOpen(false)} className="block py-3 px-4 rounded-xl text-slate-700 hover:bg-white hover:text-indigo-600 shadow-sm border border-transparent hover:border-white/50 transition-all">{content.nav.education}</Link></li>
+                            <li><Link href="/photos" onClick={() => setIsOpen(false)} className="block py-3 px-4 rounded-xl text-slate-700 hover:bg-white hover:text-indigo-600 shadow-sm border border-transparent hover:border-white/50 transition-all">{content.nav.photos}</Link></li>
                         </ul>
 
                         <div className="px-5 w-full mb-6 border-t border-slate-200/50 pt-4 mt-2">

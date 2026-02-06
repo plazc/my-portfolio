@@ -16,6 +16,7 @@ export default function Sidebar() {
         { name: content.nav.about, href: "/#about" },
         { name: content.nav.experience, href: "/#experience" },
         { name: content.nav.education, href: "/#education" },
+        { name: content.nav.photos, href: "/photos" },
     ];
 
     return (
@@ -38,7 +39,7 @@ export default function Sidebar() {
                             AZD.
                         </h1>
                         <p className="text-sm font-medium text-slate-500 mt-1">
-                            Portfolio
+                            Personal Site
                         </p>
                     </div>
 

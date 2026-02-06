@@ -3,7 +3,7 @@
 import React, { createContext, useContext, useState, useEffect } from "react";
 import { dictionaries, ResumeData } from "@/data/resume";
 
-type Language = "en" | "tr" | "ru";
+type Language = "en" | "tr" | "ru" | "sv";
 
 interface LanguageContextType {
     language: Language;
@@ -23,6 +23,8 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
             setLanguage("tr");
         } else if (browserLang === "ru") {
             setLanguage("ru");
+        } else if (browserLang === "sv") {
+            setLanguage("sv");
         } else {
             setLanguage("en");
         }

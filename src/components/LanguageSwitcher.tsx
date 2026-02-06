@@ -9,6 +9,7 @@ export default function LanguageSwitcher() {
         { code: "en", label: "EN" },
         { code: "tr", label: "TR" },
         { code: "ru", label: "RU" },
+        { code: "sv", label: "SV" },
     ];
 
     return (
@@ -16,7 +17,7 @@ export default function LanguageSwitcher() {
             {languages.map((lang) => (
                 <button
                     key={lang.code}
-                    onClick={() => setLanguage(lang.code as "en" | "tr" | "ru")}
+                    onClick={() => setLanguage(lang.code as "en" | "tr" | "ru" | "sv")}
                     className={`
             px-2 py-1 text-xs font-bold rounded-md transition-all
             ${language === lang.code

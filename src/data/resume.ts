@@ -77,7 +77,8 @@ const resumeEn = {
         about: "About",
         experience: "Experience",
         education: "Education",
-        connect: "Connect"
+        connect: "Connect",
+        photos: "Photos"
     },
     ui: {
         expertise: "Expertise",
@@ -150,7 +151,8 @@ const resumeTr: ResumeData = {
         about: "Hakkımda",
         experience: "Deneyim",
         education: "Eğitim",
-        connect: "İletişim"
+        connect: "İletişim",
+        photos: "Fotoğraflar"
     },
     ui: {
         expertise: "Uzmanlıklar",
@@ -223,7 +225,8 @@ const resumeRu: ResumeData = {
         about: "Обо мне",
         experience: "Опыт",
         education: "Образование",
-        connect: "Контакты"
+        connect: "Контакты",
+        photos: "Фотографии"
     },
     ui: {
         expertise: "Экспертиза",
@@ -235,8 +238,83 @@ const resumeRu: ResumeData = {
     }
 };
 
+const resumeSv: ResumeData = {
+    ...resumeEn,
+    title: "Student inom Elektroteknik och Elektronik",
+    contact: {
+        ...resumeEn.contact,
+        location: "Maltepe, Istanbul"
+    },
+    about: "Entusiast av self-hosting, beroende av optimering. Inriktad på mjukvaruintegration och Linux, förbättrar teamfärdigheter för omfattande arbeten. Lär sig DevOps-grunder och förbereder sig för detta område.",
+    expertise: [
+        { name: "Linux", icon: FaLinux },
+        { name: "Orkestrering", icon: SiKubernetes },
+        { name: "Automation", icon: SiAnsible },
+        { name: "Lagarbete", icon: null },
+        { name: "Serversystem", icon: FaDocker },
+        { name: "FinOps", icon: null },
+    ],
+    keyAchievements: [
+        "Självlärande: Linux, AI-serverautomation med Python, Docker, orkestreringsövningar med minikube.",
+        "Praktikplatser på officiella företag som ALARKO och TÜBİTAK.",
+        "Universitetsföreningar: Gick med i IEEE Marmara som styrelseledamot och organiserade evenemang för 300+ studenter."
+    ],
+    experience: [
+        {
+            title: "Grunder inom Open Source, Server, Nätverk, Docker etc. (Självlärd)",
+            period: "Feb 2024 - Nuvarande",
+            description: [
+                "Installerade min egen personliga blogg i ett år med namnet \"zdevran.com\", körde den på min gamla dator utan serverkostnader. Sedan stängde jag den och sätter nu upp en ny vid namn \"ahmet.se\".",
+                "Försöker fortfarande skapa minimala miljöer för att lära mig orkestrering med minikube."
+            ]
+        },
+        {
+            title: "Organisering av Gemenskapsaktiviteter",
+            period: "Okt 2022 - Nuvarande",
+            description: [
+                "Planerade huvudevenemanget och organiserade teamet som gemenskapsledare.",
+                "Träffade gäster och omorganiserade evenemanget efter deras tillgänglighet.",
+                "Implementerade planen korrekt och hjälpte deltagarna att dra nytta av gästerna så mycket som möjligt."
+            ]
+        },
+        {
+            title: "Projektbaserade Team och Tävlingsdeltagande",
+            period: "Feb 2021 - Maj 2023",
+            description: [
+                "Gick med i projektbaserade team på universitetet. Såsom UAV Drone Design Comp. och Hyperloop Design Comp.",
+                "Såg den svåra delen av teamarbetet och lärde mig hur man hanterar psykologi och mental hälsa för en hälsosam process. Såg vikten av kommunikation mellan team."
+            ]
+        },
+    ],
+    education: {
+        degree: "Kandidatexamen i Elektroteknik och Elektronik",
+        school: "Marmara University",
+        period: "Okt 2021 - Jun 2026",
+        details: [
+            "Relevanta kurser inom Elektroteknik och Elektronik"
+        ]
+    },
+    nav: {
+        home: "Hem",
+        about: "Om mig",
+        experience: "Erfarenhet",
+        education: "Utbildning",
+        connect: "Kontakt",
+        photos: "Foton"
+    },
+    ui: {
+        expertise: "Expertis",
+        techStack: "Teknikstack",
+        experience: "Erfarenhet",
+        education: "Utbildning",
+        keyAchievements: "Nyckelprestationer",
+        footer: "Byggd med Next.js & Tailwind"
+    }
+};
+
 export const dictionaries = {
     en: resumeEn,
     tr: resumeTr,
-    ru: resumeRu
+    ru: resumeRu,
+    sv: resumeSv
 };
