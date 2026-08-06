@@ -1,36 +1,132 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🚀 Ahmet Zekeriya Devran — Personal Portfolio
 
-## Getting Started
+A modern, high-performance, and visually vibrant personal portfolio website built with **Next.js 16 (App Router)**, **React 19**, **Tailwind CSS v4**, and **Framer Motion**.
 
-First, run the development server:
+Designed with a sleek **light mode glassmorphism theme**, warm gradient accents, micro-interactions, and lightweight standalone production builds optimized for resource-constrained servers/VPS environments.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+---
+
+## ✨ Features
+
+- **🎨 Modern Glassmorphism & Light Mode UI**: Vibrant mesh gradients, backdrop blurs, and sunset orange/warm color accents.
+- **⚡ Fluid Animations**: Smooth page transitions, staggered list entrances, interactive card hovers, and floating hero elements powered by **Framer Motion**.
+- **📱 Fully Responsive**: Custom layout supporting mobile navigation dropdowns and persistent desktop sidebars.
+- **🛠️ Self-Host & Resource-Optimized**: 
+  - Next.js **standalone output mode** for minimal memory usage.
+  - Multi-stage **Dockerfile** & `docker-compose` ready for effortless container deployment.
+  - Streamlined production build process avoiding high CPU/RAM usage during deployment.
+
+---
+
+## 🛠️ Tech Stack
+
+- **Framework**: [Next.js 16](https://nextjs.org/) (App Router & Turbopack)
+- **UI Library**: [React 19](https://react.dev/)
+- **Styling**: [Tailwind CSS v4](https://tailwindcss.com/) & Vanilla CSS Mesh Gradients
+- **Animations**: [Framer Motion](https://www.framer.com/motion/)
+- **Icons**: [React Icons](https://react-icons.github.io/react-icons/)
+- **Language**: [TypeScript](https://www.typescriptlang.org/)
+- **Containerization**: [Docker](https://www.docker.com/) & Docker Compose
+
+---
+
+## 📂 Project Structure
+
+```text
+my-portfolio/
+├── public/                 # Static assets (images, favicon, profile photo)
+│   └── me.jpg              # Profile picture
+├── src/
+│   ├── app/
+│   │   ├── globals.css     # Design tokens, CSS variables, and mesh background
+│   │   ├── layout.tsx      # Root layout wrapper
+│   │   └── page.tsx        # Hero, Expertise, Experience, Education & Achievements
+│   ├── components/
+│   │   ├── MainLayout.tsx  # Application layout container
+│   │   ├── Sidebar.tsx     # Desktop glassmorphism sidebar
+│   │   └── MobileNav.tsx   # Mobile navigation header & animated drawer
+│   └── data/
+│       └── resume.ts       # Centralized resume & personal information data
+├── Dockerfile              # Multi-stage optimized Docker build definition
+├── docker-compose.yml      # Container orchestration configuration
+└── next.config.ts          # Next.js build & standalone output config
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🚀 Getting Started
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### Prerequisites
 
-## Learn More
+- **Node.js**: v18.x or higher
+- **npm** / **yarn** / **pnpm**
 
-To learn more about Next.js, take a look at the following resources:
+### Local Development
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/plazc/ahmet-portfolio.git
+   cd ahmet-portfolio
+   ```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
 
-## Deploy on Vercel
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. **View in browser:**
+   Open [http://localhost:3000](http://localhost:3000)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🐳 Production & Server Deployment
+
+This repository is optimized to build and run smoothly on small servers/VPS without consuming excessive CPU or RAM.
+
+### Option 1: Docker Compose (Recommended)
+
+Run the containerized application with a single command:
+
+```bash
+docker-compose up -d --build
+```
+
+The app will be running in production mode on port `3000`.
+
+### Option 2: Docker Build & Run
+
+```bash
+# Build Docker image
+docker build -t ahmet-portfolio .
+
+# Run container
+docker run -d -p 3000:3000 --name ahmet-portfolio ahmet-portfolio
+```
+
+### Option 3: Manual Standalone Build
+
+```bash
+# Create production build
+npm run build
+
+# Start production server
+npm run start
+```
+
+---
+
+## ✏️ Customization
+
+- **Updating Portfolio Info**: Edit `src/data/resume.ts` to update your contact details, bio, tech stack, experience, and education.
+- **Profile Image**: Replace `public/me.jpg` with your own profile photo.
+
+---
+
+## 📄 License
+
+This project is open source and available under the [MIT License](LICENSE).
