@@ -2,6 +2,8 @@
 
 A modern, high-performance, and visually vibrant personal portfolio website built with **Next.js 16 (App Router)**, **React 19**, **Tailwind CSS v4**, and **Framer Motion**.
 
+Preview in: https://ahmet.se
+
 Designed with a sleek **light mode glassmorphism theme**, warm gradient accents, micro-interactions, and lightweight standalone production builds optimized for resource-constrained servers/VPS environments.
 
 ---
